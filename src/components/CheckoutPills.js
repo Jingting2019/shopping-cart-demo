@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Nav, NavItem, NavLink, TabContent, TabPane, Row, Col, Button } from 'reactstrap';
 import classnames from 'classnames';
 import CreditCardForm from './CreditCardForm';
+import "./checkoutPills.css";
 
 const CheckoutPills = (props) => {
   const [activeTab, setActiveTab] = useState('1');
@@ -18,6 +19,7 @@ const CheckoutPills = (props) => {
             <NavLink
               className={classnames({ active: activeTab === '1' })}
               onClick={() => { toggle('1'); }}>
+              <i className="fa fa-id-card" />
               Credit Card
             </NavLink>
           </NavItem>
@@ -27,6 +29,7 @@ const CheckoutPills = (props) => {
             <NavLink
               className={classnames({ active: activeTab === '2' })}
               onClick={() => { toggle('2'); }}>
+              <i className="fa fa-paypal" />
               PayPal
             </NavLink>
           </NavItem>
@@ -36,6 +39,7 @@ const CheckoutPills = (props) => {
             <NavLink
               className={classnames({ active: activeTab === '3' })}
               onClick={() => { toggle('3'); }}>
+              <i className="fa fa-university" />
               Bank Transfer
             </NavLink>
           </NavItem>

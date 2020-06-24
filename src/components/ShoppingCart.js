@@ -46,27 +46,25 @@ class ShoppingCart extends React.Component {
                  <Fragment>
                    {matches.small && (
                      <div>
-                     <p>I am small!</p>
-                     {this.state.items.map(item => (
-                       <ItemSmall
-                         key={item.id}
-                         id={item.id}
-                         discount={item.coupon}
-                         price={item.price}
-                         onDelete={this.handleDelete}
-                         changeQuantity={this.handleChange}
-                       />
-                     ))}
-                     <hr/>
-                     <p>total: {this.calTotal()}</p>
-                     <hr/>
-                     <Button color="warning">Continue Shopping</Button>
-                     <CheckoutModal buttonLabel="CheckOut" />
+                       {this.state.items.map(item => (
+                         <ItemSmall
+                           key={item.id}
+                           id={item.id}
+                           discount={item.coupon}
+                           price={item.price}
+                           onDelete={this.handleDelete}
+                           changeQuantity={this.handleChange}
+                         />
+                       ))}
+                       <hr/>
+                       <p>total: ${Math.round(this.calTotal() * 100) / 100.00}</p>
+                       <hr/>
+                       <Button color="warning" size="lg" block style={{marginBottom: "1rem"}}>Continue Shopping</Button>
+                       <CheckoutModal buttonLabel="CheckOut" />
                      </div>
                    )}
                    {matches.medium && (
                      <div>
-                      <p>large</p>
                       <Table hover>
                         <thead>
                           <tr>
@@ -92,7 +90,8 @@ class ShoppingCart extends React.Component {
                         </tbody>
                       </Table>
                       <hr/>
-                      <p style={{display: "flex", justifyContent: "flex-end"}}>total: {this.calTotal()}</p>
+                      <p style={{display: "flex", justifyContent: "flex-end"}}>total: </p>
+                      <p style={{display: "flex", justifyContent: "flex-end"}}>${Math.round(this.calTotal() * 100) / 100.00}</p>
                       <hr/>
                       <div style={{display: "flex", justifyContent: "space-between"}}>
                         <Button color="warning" style={{display: "inline-block"}}>Continue Shopping</Button>

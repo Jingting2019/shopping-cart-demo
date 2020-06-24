@@ -14,7 +14,7 @@ const CheckoutModal = (props) => {
 
   return (
     <div style={{display: "inline-block"}}>
-      <Button color="success" onClick={toggle}>{buttonLabel}</Button>
+      <Button color="success" size="lg" onClick={toggle}>{buttonLabel}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Come on! Let's check out</ModalHeader>
         <ModalBody>
